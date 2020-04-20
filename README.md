@@ -4,7 +4,7 @@ Like printf for your environment, designed for use in `docker-entrypoint.sh` to 
 
 When passed a filename containing a '.env' suffix it will replace all instances of `%VARIABLE%` found within with their matching environment variable values and write out a new file without the suffix.
 
-Unmatched environment variables or malformed variable names will be ignored.
+Unmatched environment variables or malformed variable names will be ignored. Literal `%` can be escaped by using `%%`.
 
 Common usage:
 
