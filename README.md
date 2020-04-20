@@ -1,6 +1,6 @@
 # envf
 
-Like printf for your environment.
+Like printf for your environment, designed for use in `docker-entrypoint.sh` to replace template files with current stack variables.
 
 When passed a filename containing a '.env' suffix it will replace all instances of `%VARIABLE%` found within with their matching environment variable values.
 
@@ -10,6 +10,9 @@ Common usage:
 
     find . -type f -name '*.env' -exec envf {} \; -delete
 
+In Docker:
+
+    COPY --from=c45y/envf:latest /bin/envf /bin/envf
 
 An example file:
 
